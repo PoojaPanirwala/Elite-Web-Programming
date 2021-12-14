@@ -1,0 +1,101 @@
+main{
+    font-family:-webkit-pictograph;
+}
+.centerText{
+    color: darkblue;
+    margin:auto;
+    width: fit-content;
+    text-align: center;
+}
+body{
+    background-image: url("/assets/SectorBG1.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;    
+}
+#sectorType>img{
+    width: 300px;
+    height: 200px;
+}
+#sectorType>img:hover{
+    width: 320px;
+    height: 220px;
+    cursor: pointer;
+}
+.flexItem{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.centerText>h2{
+    font-size: xx-large;
+}
+.centerText>p{
+    font-size: large;
+}
+.flexItem>a{
+    color: teal;
+    font-size: larger;
+    font-family: inherit;
+    font-weight: 700;
+}
+.flexItem>a:hover{
+    color: orange;
+    cursor: pointer;
+}
+.flexItem>p{
+    color: black;
+    width: 18pc;
+    font-size: smaller;
+}
+#benefits{
+    text-align: left;
+}
+
+#flags>img{
+    width: 250px;
+    height: 150px;
+}
+
+.swiper-slide{
+    width: 50%;
+}
+
+#paragraphs{
+    padding: 50px;
+    background-color: lightcyan;
+    margin-top: -5px;
+}
+
+.container {
+    position: relative;
+  }
+  
+.center {
+position: absolute;
+top: 54%;
+left: 43%;
+transform: translate(-50%, -50%);
+font-size: 18px;
+}
+  
+.container>img { 
+width: 100%;
+height: auto;
+}
+
+#benefits {
+    position: relative;
+  }
+  
+  .bottomleft {
+    position: absolute;
+    top: 38%;
+    left:34%;
+    font-size: 18px;
+  }
+  
+#benefits >img { 
+    width: 100%;
+    height: 750px;
+  }

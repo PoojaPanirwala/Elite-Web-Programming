@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sectors Home Page</title>
+        <link rel="stylesheet" href="styles/SectorHome.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/slidecube.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+      <div id="header"></div>
+        <main> 
+            <div class="container">
+                <img src="assets/service.jpg" alt="Cinque Terre" width="1000" height="300">
+                <div class="center">
+                    <h2>Services are here!</h2>
+                    <i>Different sectors provide you different understanding of knowledge. <br>
+                        The Elite Services include various sectors to influence people to build up <br>
+                        their own knowledge in types of fields such as medical, education and <br>
+                        booking for hotels!</i>
+                    </div>
+              </div>        
+            <section id="paragraphs">
+                <p>
+                    <b>How we choose the best online learning platforms</b><br><br>
+                    There are plenty of choices in the online learning management software area, so there is sure to be one 
+                    well suited for each organization.
+                    A major differentiator is price. Some LMS’ are available for free, or have a low 
+                    cost entry tier. Others offer more features, but at a higher price point. 
+                    <br><br>Pricing models are also different with some providers charging only by each student, 
+                    while others having the price based on the plan, and then a lower additional cost for each additional learner. 
+                    <br><br>
+                    Another feature to look for are the mobile apps. Especially younger learners value these apps so that 
+                    a learner can engage in education from anywhere, at any time. Be sure that the apps are available for 
+                    both of the mobile platforms- Android and iOS. Also, check the ratings of the apps in their respective 
+                    stores, as just because an app is available it may not be a great one with some low rated, glitchy ones out there.
+                </p>
+                <p>
+                    <b>How to choose the best medical services</b><br><br>
+                    Healthcare is a broad term used to describe the various systems we as humans rely upon to help 
+                    us maintain our personal health through the treatment (or prevention) of illness, injury, disease, 
+                    and other physical or mental impairments.
+                    <br><br>
+                    Healthcare encompasses medical doctors and hospitals and dentistry, psychology, nursing, 
+                    physical therapy, occupational therapy, and more.
+                    <br><br>
+                    Nationwide healthcare systems take many forms, and access to healthcare varies across 
+                    countries, municipalities, and individuals and is primarily influenced by economic and social factors.
+                </p>
+                <p>
+                  <b>How we choose the best hotels for travel</b><br><br>
+                  Travel is fun, right? But it can get expensive if you don’t know where and 
+                  how to find the best deals. That’s where we can help!
+                  <br><br>
+                  Getting a great deal on a hotel room can save you hundreds of money. 
+                  Sure, you can always reserve a hotel room on the hotel’s website, but is that the 
+                  best way to do it? How about all of the popular online travel agencies (OTAs)? Which one offers the best pricing?
+                  <br>
+                  We’ve shown you how to find the best prices hotel rooms.
+                  <br><br>
+                  We’ve gone through all of the best and most popular websites (plus a few that 
+                  aren’t so popular) to find out once and for all: where is the best place to book a hotel at the cheapest price?
+                </p>
+            </section>
+            <br>
+            <br>
+            <div id="sectorType" class="flexItem">
+                <img src="assets/EducationSector.jpg">
+                <img src="assets/MedicalSector.jpg">
+                <img src="assets/BookingSector.jpg">
+            </div>
+            <nav class="flexItem">
+                <a href="EducationSector.html">Education Section</a>
+                <a href="MedicalSector.html">Medical Section</a>
+                <a href="BookingSector.html">Booking Section</a>
+            </nav>
+            <nav class="flexItem">
+                <p>It helps you to find out best platforms to enhance knowledge in different fields of study.</p>
+                <p>Now, needful medicines can be got easily. People can have idea about hospitals and medicals with best facility provided.</p>
+                <p>It provides different sources for planning your holidays or spending weekend time. </p>
+            </nav>
+            <br>
+            <div id="benefits">
+                <img src="assets/always2.gif" alt="Cinque Terre" width="1000" height="300">
+                <div class="bottomleft">
+                    <h2>Why use Elite Sectors?</h2>
+                    <ul>
+                        <li>Provides safe and legel sites and companies for your need</li>
+                        <li>Easy to use and understand</li>
+                        <li>Grab platform according to your need in each sector</li>
+                        <li>Reduce complexicity for searching</li>
+                        <li>24/7 support for users</li>
+                    </ul>
+                </div>
+              </div>
+            <br>
+            <div class="centerText">
+                <h2>Where platforms come from?</h2>
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/india.jpg" height="600px"></div>
+                  <div class="swiper-slide"><img src="assets/canada.jpg"></div>
+                  <div class="swiper-slide"><img src="assets/usa.jpg"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>           
+            <br>
+            <br>
+        </main>
+        <div id="footer"></div>
+    </body>
+</html>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+  });
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      $('#paragraphs p').hide();
+        doFade('#paragraphs p:first');
+        function doFade(elem) {
+            $(elem).fadeIn(250).delay(7000).fadeOut(250, function () {
+                $(this).insertAfter($('#paragraphs p:last'));
+                doFade('#paragraphs p:first');
+            });
+        }
+</script>

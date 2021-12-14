@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Sector</title>
+    <link rel="stylesheet" href="styles/BookingCss.css">    
+    <link rel="icon" href="assets/Sign-Select-icon.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <h1 id="BookingTitle">Hotel Bookings</h1>
+        <div id="Introduction">
+            Book your hotel through <b>Hotel Booking Sector</b> of <i>Elite Service Hub</i> Whether you’re looking 
+            for a five-star luxury resort, a comfortable downtown hotel or a budget option 
+            near the airport, we’ve got you covered. we’ll find you an incredible deal.<br>
+            Prefer to know the name of the hotel before you pay? You have that option too.
+            Whether you’re going on a business trip, romantic weekend, 
+            family vacation or last-minute getaway <br>
+            – wherever and whenever you need a hotel, Elite comes through with great deals!
+        </div>
+        <fieldset>
+            <legend style="font-weight: 700;font-size: larger;color: brown;">State your comfort</legend>
+            <table>
+                <tr>
+                    <td><select id="country" class="radius padding" onchange="searchHotel()"></select></td>
+                    <td><input type="text" id="checkin" class="radius padding" placeholder="Check-in" onfocus="(this.type='date')" style="width: 150px;"></td>
+                    <td><input type="text" id="checkout" class="radius padding" placeholder="Check-out" onfocus="(this.type='date')" style="width: 150px;"></td>
+                    <td>
+                        <div id="summary" class="radius padding" style="text-align: center;">
+                            Adult 2 | Child 0 | Rooms 1
+                        </div>                        
+                    </td>
+                    <td>
+                        <input type="button" class="radius padding" value="Let's Find" onclick="check()">
+                    </td>
+                </tr>
+                <tr colspan=3>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div id="incr-decr" class="padding radius">
+                            <div>
+                                &emsp; Adult &emsp;<button id="Aincrement" onclick="incrementValue(0)">+</button><input type="text" id="adult" value="2" style="text-align: center;"><button id="Adecrement" onclick="decrementValue(0)">-</button><br>
+                                &emsp; Child &emsp;<button id="Cincrement" onclick="incrementValue(1)" style="margin-left: 2px;">+</button><input type="text" id="child" value="0" style="text-align: center;"><button id="Cdecrement" onclick="decrementValue(1)">-</button><br>
+                                &emsp; Room &emsp;<button id="Rincrement" onclick="incrementValue(2)" style="margin-left: -3px;">+</button><input type="text" id="room" value="1" style="text-align: center;"><button id="Rdecrement" onclick="decrementValue(2)">-</button>
+                            </div>
+                        </div>
+                    </td>                    
+                </tr>
+            </table>
+                       
+            <!-- <br>
+            <label>Ratings : </label>
+            <input type="checkbox" name="rate" value="2-Star">★★
+            <br>&emsp;&emsp;&emsp;&emsp;
+            <input type="checkbox" name="rate" value="3-Star">★★★
+            <br>&emsp;&emsp;&emsp;&emsp;
+            <input type="checkbox" name="rate" value="5-Star">★★★★★
+            <br>&emsp;&emsp;&emsp;&emsp;
+            <input type="checkbox" name="rate" value="2-Star">★★★★★★★ -->
+
+            <hr>
+            <ul type="none" id="hotellist" class="row">
+                <li><img src="assets/radission.jpg"><br><a href="https://www.radissonhotels.com/en-us/hotels/radisson-kutch-kandla?cid=a:se+b:gmb+c:apac+i:local+e:rad+d:ind+h:INGJKAN1" target="blank">Radisson Hotel Kandla</a><br>Kutch, Gujarat</li>
+                <li><img src="assets/novotel.jpg"><br><a href="https://www.guestreservations.com/novotel-new-delhi-aerocity-hotel-an-accorhotels-brand/booking?gclid=CjwKCAiA-9uNBhBTEiwAN3IlNH3jc-xX4qoxmfYd76tD6zDpVwpkbjAWy-DDpoYd-F2X-P7UM4SdSxoCO8QQAvD_BwE" target="blank">Novotel New Delhi International Airport</a><br>Airport, Delhi</li>
+                <li><img src="assets/fairmont.jpg"><br><a href="https://www.fairmont.com/royal-york-toronto/?goto=fiche_hotel&code_hotel=A551&merchantid=seo-maps-CA-A551&sourceid=aw-cen&utm_medium=seo+maps&utm_source=google+Maps&utm_campaign=seo+maps&y_source=1_MTIzNjE0MTEtNzE1LWxvY2F0aW9uLmdvb2dsZV93ZWJzaXRlX292ZXJyaWRl" target="blank">Fairmont Royal York</a><br><br>100 Front St West, Toronto</li>
+                <li><img src="assets/adelaide.jpg"><br><a href="https://www.adelaideinn.com/" target="blank">Adelaide Inn</a><br>1215 Ysabel Avenue, Paso Robles, USA</li>
+                <li><img src="assets/stonecroft.jpg"><br><a href="http://www.stonecroftinn.com/" target="blank">Stonecroft Inn</a><br>3032 Dougall Ave, Windsor</li>
+             </ul>
+        </fieldset>
+        <br>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>
+<script src="Js.js"></script>

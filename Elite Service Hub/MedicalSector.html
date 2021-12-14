@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Sector</title>
+    <link rel="stylesheet" href="styles/MedicalCss.css">
+    <link rel="icon" href="assets/medical_fav.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div class="container">
+            <img src="assets/doctor.jpg" alt="Cinque Terre" width="1000" height="300">
+            <div class="center">
+                <h1 id="Title">Medical Sector</h1>
+                <b>Medical Sector</b> of <i>Elite Service Hub</i> consists of various platforms <br>
+                    related to medical services, medical equipment and drugs. <br>
+                    It facilitates you the best option to reach out for health care 24/7.<br>                    
+                    <br>
+                    We are your's foremost trusted healthcare advisors, renowned for our case management <br>and 
+                    care coordination that ensures best possible care, <br>no matter how complex the healthcare challenge.
+                    <br><br>
+                    Our high-touch, resourceful advocacy and guidance is available to our patients and <br>
+                    their families 365 days, wherever they are located in India, Canada or around the world.
+                    <br>"Don't worry! we are here for you"
+                </div>
+          </div>
+        <br>
+        <div id="main_cntent">
+            <div id="inner_content">
+                <h2>Best Care Possible</h2>
+                <p>It is difficult to an attempt to navigate a complex healthcare system on your own. <br>
+                    Doctors rotate, next steps are unclear, missteps and oversights happen. <br>
+                    Wait times are lengthy. The confusion, stress and frustration overwhelm <br>
+                    patients and families already in distress.
+                </p>
+                <h2>Second Opinions</h2> 
+                <p>             
+                    Patients, their families and their employers will often ask for a second opinion.<br>
+                    We source second opinions from our global network of experts from leading centers of excellence<br>
+                    and from distinguished professors at the top medical schools.
+                </p>  
+                <h2>Elite Bedside Patient Advocacy</h2>
+                <p>
+                    We are highly skilled in assisting patients at the bedside in hospital, and <br>
+                    providing important support to family members, alleviating them of the frustration, <br>
+                    confusion, helplessness when trying to ensure needs of their loved ones are being met <br>
+                    –in a timely and appropriate way.
+                </p>                
+            </div>            
+            <img src="assets/best_care.jpg">
+        </div>
+        <br>
+        <div id="ServicList">
+            <br><hr><br>
+            <div id="seachfield">
+                <label>Find best hospitals</label>&emsp;
+                <input type="text" placeholder="Search here.." id="hplatform">
+            </div>
+            <ul type="none" id="hospitallist" class="row">
+                <li><img src="assets/logo-uhn.png"><br><a href="https://www.uhn.ca/" target="blank">Toronto General - University Health Network</a><br>Toronto, Canada</li>
+                <li><img src="assets/aiims.png"><br><a href="https://www.aiims.edu/en.html" target="blank">All India Institute of Medical Sciences</a><br>Delhi, India</li>
+                <li><img src="assets/mayo.png"><br><a href="https://www.mayoclinic.org/patient-visitor-guide/minnesota" target="blank">Mayo Clinic</a><br><br>Rochester, USA</li>
+                <li><img src="assets/cleveland.jpg"><br><a href="https://my.clevelandclinic.org/" target="blank">Cleveland Clinic</a><br>Cleveland, USA</li>
+                <li><img src="assets/MGH.png"><br><a href="https://www.massgeneral.org/" target="blank">Massachusetts General Hospital</a><br>Boston, USA</li>
+             </ul>
+            <br>            
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>
+<script>
+  $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+  });
+
+  var HospitalArray='{ "hospitalPlatforms":['+
+            '{"name":"Toronto General - University Health Network","city":"Toronto, Canada","src":"assets/logo-uhn.png","href":"https://www.uhn.ca/"},'+
+            '{"name":"All India Institute of Medical Sciences","city":"Delhi, India","src":"assets/aiims.png","href":"https://www.aiims.edu/en.html"},'+
+            '{"name":"Mayo Clinic","city":"Rochester, USA","src":"assets/mayo.png","href":"https://www.mayoclinic.org/patient-visitor-guide/minnesota"},'+
+            '{"name":"Cleveland Clinic","city":"Cleveland, USA","src":"assets/cleveland.jpg","href":"https://my.clevelandclinic.org/"},'+
+            '{"name":"Massachusetts General Hospital","city":"Boston, USA","src":"assets/MGH.png","href":"https://www.massgeneral.org/"},'+
+            '{"name":"Medanta The Medicity","city":"Gurgaon, India","src":"assets/medanta_logo.png","href":"https://www.medanta.org/hospitals-near-me/gurugram-hospital/"},'+
+            '{"name":"The Johns Hopkins Hospital","city":"Baltimore, USA","src":"assets/johns-hopkins.png","href":"https://www.hopkinsmedicine.org/the_johns_hopkins_hospital"},'+
+            '{"name":"Apollo Hospital","city":"Chennai, India","src":"assets/apollo.png","href":"https://www.apollohospitals.com/"},'+
+            '{"name":"Mount Sinai Hospital","city":"Toronto, Canada","src":"assets/mount.png","href":"https://www.sinaihealth.ca/"},'+
+            '{"name":"Jewish General Hospital","city":"Montreal, Canada","src":"assets/jewish.jpg","href":"https://www.jgh.ca/"}]}';
+    var hospitalJson=JSON.parse(HospitalArray);
+
+    $('#hplatform').on('keypress',function(e) {
+    if(e.which == 13) {
+        $('#hospitallist').empty();
+        hospitalJson.hospitalPlatforms.forEach(element => {
+            if(element.name.toLowerCase().indexOf($('#hplatform').val().toLowerCase()) > -1 || element.city.toLowerCase().indexOf($('#hplatform').val().toLowerCase()) > -1)
+            {                
+                let text='<li><img src="'+element.src+'"><br><a href="'+element.href+'" target="blank">'+element.name+'</a><br>'+element.city+'</li>';
+                $('#hospitallist').append(text);
+            }
+        });        
+    }
+    });
+</script>

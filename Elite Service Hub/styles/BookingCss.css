@@ -1,0 +1,141 @@
+body{
+    background: aliceblue;
+    font-family: system-ui;
+    background-image: url("/assets/bookingBG.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+label{
+    font-weight: 700;
+}
+
+#BookingTitle{
+    text-align: center;
+    color:brown;
+    text-shadow: 2px 1px black;
+}
+
+h5{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 1px black;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    margin-top: 65px;
+}
+
+fieldset{
+    padding: 22px;
+}
+
+#country{
+    width: 430px;
+}
+
+#incr-decr{
+    display: none;
+    margin-top:5px;
+    background-color: whitesmoke;
+    border: 1px solid rgb(36, 35, 35);
+}
+
+#summary{
+    cursor: pointer;
+    border:1px solid;
+    padding: 8px;
+    width: 300px;
+    background-color: white;
+}
+
+#summary:hover{
+    background-color: rgb(253, 232, 192);
+}
+
+table{
+    margin: auto;
+}
+
+input[type=button]{
+    background-color: rgb(228, 182, 98);
+    cursor: pointer;
+}
+
+.radius{
+    border-radius: 5px;
+}
+
+#Introduction{
+    margin: 20px 250px 10px 250px;
+    font-style: italic;
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 25px;
+    border: 4px dashed darkgray;
+}
+
+.padding{
+    padding: 10px;
+}
+
+.title{
+    font-family:-webkit-pictograph;
+    color: brown;
+    text-shadow: 2px 1px black;
+    border: 1px double gray;
+    padding: 5px;
+}
+
+#hotellist>li{
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 35px;
+}
+
+#hotellist{
+    text-align: center;
+    clear: both;
+    background-color: rgb(255, 224, 167);
+    border-radius: 45px;
+}
+
+#hotellist>li>img{
+    height:150px;
+    width: 170px;
+}
+
+#hotellist>li>a{
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+}
+#MainBody{
+    border-left: 2px solid black;
+    margin-left: 31%;
+    height: 400px;
+}
+#MainBody>p{
+    display: block;
+    margin-left: 35%;
+    
+}
+
+#flags>img{
+    margin-left: 96px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row>li {
+    float: left;
+    width: 15.33%;
+    padding: 5px;
+    height: 250px;
+  }
