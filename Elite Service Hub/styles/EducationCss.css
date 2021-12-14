@@ -192,3 +192,15 @@ label{
   margin:auto;
   padding: 10px;
 }
+
+@media screen and (max-width:1376px){
+  .center{
+    font-size:15px;
+  }
+}
+
+@media screen and (max-width:1128px){
+  .center{
+    font-size:12px;
+  }
+}
